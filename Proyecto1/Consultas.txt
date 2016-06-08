@@ -1,0 +1,724 @@
+ --------------------TUPLAS POR TABLA ---------
+ SELECT COUNT(*) FROM SUPPLIER;
+ count 
+-------
+ 10000
+(1 row)
+
+ SELECT COUNT(*) FROM REGION;
+  count 
+-------
+     5
+(1 row)
+
+ SELECT COUNT(*) FROM PART;
+  count  
+ --------
+  200000
+ (1 row)
+
+ SELECT COUNT(*) FROM PARTSUPP;
+  count  
+--------
+ 800000
+(1 row)
+
+ SELECT COUNT(*) FROM ORDERS;
+   count  
+---------
+ 1500000
+(1 row)
+
+ SELECT COUNT(*) FROM NATION;
+  count 
+-------
+    25
+(1 row)
+
+ SELECT COUNT(*) FROM LINEITEM;
+  count  
+---------
+ 6001215
+(1 row)
+
+ SELECT COUNT(*) FROM CUSTOMER;
+ count  
+--------
+ 150000
+(1 row)	
+
+ --------------------TAMANO DE CADA COLUMNA ------
+ ---------------------CUSTOMER (BYTES) -------------------------
+ fbvdb=# SELECT AVG(PG_COLUMN_SIZE(c_custkey)) FROM CUSTOMER;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+
+SELECT AVG(PG_COLUMN_SIZE(c_name)) FROM CUSTOMER;
+         avg         
+---------------------
+ 19.0000000000000000
+(1 row)
+
+SELECT AVG(PG_COLUMN_SIZE(c_address)) FROM CUSTOMER;
+         avg         
+---------------------
+ 26.0537066666666667
+(1 row)
+
+SELECT AVG(PG_COLUMN_SIZE(c_nationkey)) FROM CUSTOMER;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+
+SELECT AVG(PG_COLUMN_SIZE(c_phone)) FROM CUSTOMER;
+         avg         
+---------------------
+ 16.0000000000000000
+(1 row)
+
+SELECT AVG(PG_COLUMN_SIZE(c_acctbal)) FROM CUSTOMER;
+        avg         
+--------------------
+ 6.9799600000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(c_mktsegment)) FROM CUSTOMER;
+        avg         
+--------------------
+ 9.9974000000000000
+(1 row)
+
+SELECT AVG(PG_COLUMN_SIZE(c_comment)) FROM CUSTOMER;
+         avg         
+---------------------
+ 73.5073266666666667
+(1 row)
+
+--------------------------LINEITEM ------------------------
+SELECT AVG(PG_COLUMN_SIZE(l_orderkey)) FROM LINEITEM;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+
+SELECT AVG(PG_COLUMN_SIZE(l_partkey)) FROM LINEITEM;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(l_suppkey)) FROM LINEITEM;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(l_linenumber)) FROM LINEITEM;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(l_quantity)) FROM LINEITEM;
+        avg         
+--------------------
+ 5.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(l_extendedprice)) FROM LINEITEM;
+        avg         
+--------------------
+ 8.6483578741971417
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(l_discount)) FROM LINEITEM;
+        avg         
+--------------------
+ 4.8184081056919307
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(l_tax)) FROM LINEITEM;
+        avg         
+--------------------
+ 4.7782935622203171
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(l_returnflag)) FROM LINEITEM;
+        avg         
+--------------------
+ 2.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(l_linestatus)) FROM LINEITEM;
+        avg         
+--------------------
+ 2.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(l_shipdate)) FROM LINEITEM;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(l_commitdate)) FROM LINEITEM;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(l_receiptdate)) FROM LINEITEM;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(l_shipinstruct)) FROM LINEITEM;
+         avg         
+---------------------
+ 12.9986384423820843
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(l_shipmode)) FROM LINEITEM;
+        avg         
+--------------------
+ 5.2853045591601034
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(l_comment)) FROM LINEITEM;
+         avg         
+---------------------
+ 27.4941697639561322
+(1 row)
+------------------------------NATION-------------
+SELECT AVG(PG_COLUMN_SIZE(n_nationkey)) FROM NATION;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(n_nAME)) FROM NATION;
+        avg         
+--------------------
+ 8.0800000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(n_regionkey)) FROM NATION;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(n_comment)) FROM NATION;
+         avg         
+---------------------
+ 75.2800000000000000
+(1 row)
+----------------------------------ORDER-----------------------
+SELECT AVG(PG_COLUMN_SIZE(o_orderkey)) FROM ORDERS;
+        avg         
+--------------------
+ 4.0000000000000000
+
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(o_CUSTKEY)) FROM ORDERS;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(o_orderstatus)) FROM ORDERS;
+        avg         
+--------------------
+ 2.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(o_totalprice)) FROM ORDERS;
+        avg         
+--------------------
+ 8.9401600000000000
+(1 row)
+ SELECT AVG(PG_COLUMN_SIZE(o_orderdate)) FROM ORDERS;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(o_orderpriority)) FROM ORDERS;
+        avg         
+--------------------
+ 9.3998860000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(o_clerk)) FROM ORDERS;
+         avg         
+---------------------
+ 16.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(o_shippriority)) FROM ORDERS;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(o_comment)) FROM ORDERS;
+         avg         
+---------------------
+ 49.5138720000000000
+(1 row)
+-----------------------------------PART-------------------------
+SELECT AVG(PG_COLUMN_SIZE(p_name)) FROM PART;
+         avg         
+---------------------
+ 33.7511050000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(p_partkey)) FROM PART;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(p_mfgr)) FROM PART;
+         avg         
+---------------------
+ 15.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(p_brand)) FROM PART;
+        avg         
+--------------------
+ 9.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(p_type)) FROM PART;
+         avg         
+---------------------
+ 21.5997300000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(p_size)) FROM PART;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(p_container)) FROM PART;
+        avg         
+--------------------
+ 8.5748550000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(p_retailprice)) FROM PART;
+        avg         
+--------------------
+ 6.9800000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(p_comment)) FROM PART;
+         avg         
+---------------------
+ 14.5121900000000000
+(1 row)
+------------------------PARTSUPP-----------------
+SELECT AVG(PG_COLUMN_SIZE(ps_PARTKEY)) FROM PARTSUPP;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(ps_SUPPKEY)) FROM PARTSUPP;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(ps_availqty)) FROM PARTSUPP;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(ps_supplycost)) FROM PARTSUPP;
+        avg         
+--------------------
+ 6.9798300000000000
+(1 row)
+---------------------REGION---------------------------
+SELECT AVG(PG_COLUMN_SIZE(r_regionkey)) FROM REGION;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(r_name)) FROM REGION;
+        avg         
+--------------------
+ 7.8000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(r_comment)) FROM REGION;
+         avg         
+---------------------
+ 67.0000000000000000
+(1 row)
+-----------------SUPPLIER----------------------
+SELECT AVG(PG_COLUMN_SIZE(s_suppkey)) FROM SUPPLIER;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(s_NAME)) FROM SUPPLIER;
+         avg         
+---------------------
+ 19.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(s_address)) FROM SUPPLIER;
+         avg         
+---------------------
+ 25.9771000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(s_nationkey)) FROM SUPPLIER;
+        avg         
+--------------------
+ 4.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(s_phone)) FROM SUPPLIER;
+         avg         
+---------------------
+ 16.0000000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(s_acctbal)) FROM SUPPLIER;
+        avg         
+--------------------
+ 6.9810000000000000
+(1 row)
+SELECT AVG(PG_COLUMN_SIZE(s_comment)) FROM SUPPLIER;
+         avg         
+---------------------
+ 63.5695000000000000
+(1 row)
+
+---------------------------------------------------------Consultas ----------------------------------------------------------------------
+---------------------------------------------q1
+explain analyze select
+  s_acctbal,
+  s_name,
+  n_name,
+  p_partkey,
+  p_mfgr,
+  s_address,
+  s_phone,
+  s_comment
+from
+  part,
+  supplier,
+  partsupp,
+  nation,
+  region
+where
+  p_partkey = ps_partkey
+  and s_suppkey = ps_suppkey
+  and p_size = 15
+  and p_type like '%BRASS'
+  and s_nationkey = n_nationkey
+  and n_regionkey = r_regionkey
+  and r_name = 'EUROPE'
+  and ps_supplycost = (
+    select
+      min(ps_supplycost)
+    from
+      partsupp,
+      supplier,
+      nation,
+      region
+    where
+      p_partkey = ps_partkey
+      and s_suppkey = ps_suppkey
+      and s_nationkey = n_nationkey
+      and n_regionkey = r_regionkey
+      and r_name = 'EUROPE'
+  )
+order by
+  s_acctbal desc,
+  n_name,
+  s_name,
+  p_partkey;
+
+                                                                                   QUERY PLAN                                                                                  
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=39797.67..39797.67 rows=1 width=180) (actual time=1631.361..1631.401 rows=460 loops=1)
+   Sort Key: supplier.s_acctbal, nation.n_name, supplier.s_name, part.p_partkey
+   Sort Method: quicksort  Memory: 146kB
+   ->  Merge Join  (cost=29112.39..39797.66 rows=1 width=180) (actual time=1365.689..1629.602 rows=460 loops=1)
+         Merge Cond: (part.p_partkey = partsupp.ps_partkey)
+         Join Filter: (partsupp.ps_supplycost = (SubPlan 1))
+         Rows Removed by Join Filter: 182
+         ->  Index Scan using part_pkey on part  (cost=0.42..9982.24 rows=736 width=19) (actual time=0.285..122.419 rows=747 loops=1)
+               Filter: ((p_type ~~ '%BRASS'::text) AND (p_size = 15))
+               Rows Removed by Filter: 199253
+         ->  Sort  (cost=29111.97..29121.60 rows=3853 width=171) (actual time=1365.147..1440.262 rows=158755 loops=1)
+               Sort Key: partsupp.ps_partkey
+               Sort Method: external sort  Disk: 25968kB
+               ->  Hash Join  (cost=393.12..28882.49 rows=3853 width=171) (actual time=10.183..1033.683 rows=158960 loops=1)
+                     Hash Cond: (partsupp.ps_suppkey = supplier.s_suppkey)
+                     ->  Seq Scan on partsupp  (cost=0.00..25451.00 rows=800000 width=14) (actual time=0.005..680.962 rows=800000 loops=1)
+                     ->  Hash  (cost=392.51..392.51 rows=48 width=165) (actual time=10.152..10.152 rows=1987 loops=1)
+                           Buckets: 1024  Batches: 1  Memory Usage: 346kB
+                           ->  Hash Join  (cost=41.52..392.51 rows=48 width=165) (actual time=0.069..8.345 rows=1987 loops=1)
+                                 Hash Cond: (supplier.s_nationkey = nation.n_nationkey)
+                                 ->  Seq Scan on supplier  (cost=0.00..313.00 rows=10000 width=137) (actual time=0.005..3.120 rows=10000 loops=1)
+                                 ->  Hash  (cost=41.47..41.47 rows=4 width=36) (actual time=0.051..0.051 rows=5 loops=1)
+                                       Buckets: 1024  Batches: 1  Memory Usage: 1kB
+                                       ->  Hash Join  (cost=20.43..41.47 rows=4 width=36) (actual time=0.032..0.046 rows=5 loops=1)
+                                             Hash Cond: (nation.n_regionkey = region.r_regionkey)
+                                             ->  Seq Scan on nation  (cost=0.00..18.00 rows=800 width=40) (actual time=0.003..0.007 rows=25 loops=1)
+                                             ->  Hash  (cost=20.38..20.38 rows=4 width=4) (actual time=0.016..0.016 rows=1 loops=1)
+                                                   Buckets: 1024  Batches: 1  Memory Usage: 1kB
+                                                   ->  Seq Scan on region  (cost=0.00..20.38 rows=4 width=4) (actual time=0.011..0.012 rows=1 loops=1)
+                                                         Filter: (r_name = 'EUROPE'::text)
+                                                         Rows Removed by Filter: 4
+         SubPlan 1
+           ->  Aggregate  (cost=48.72..48.73 rows=1 width=6) (actual time=0.049..0.050 rows=1 loops=642)
+                 ->  Nested Loop  (cost=1.01..48.71 rows=1 width=6) (actual time=0.025..0.047 rows=2 loops=642)
+                       ->  Nested Loop  (cost=0.86..47.74 rows=4 width=10) (actual time=0.013..0.037 rows=4 loops=642)
+                             ->  Nested Loop  (cost=0.71..47.01 rows=4 width=10) (actual time=0.011..0.026 rows=4 loops=642)
+                                   ->  Index Scan using partsupp_pkey on partsupp partsupp_1  (cost=0.42..13.75 rows=4 width=10) (actual time=0.006..0.007 rows=4 loops=642)
+                                         Index Cond: (part.p_partkey = ps_partkey)
+                                   ->  Index Scan using supplier_pkey on supplier supplier_1  (cost=0.29..8.30 rows=1 width=8) (actual time=0.003..0.003 rows=1 loops=2568)
+                                         Index Cond: (s_suppkey = partsupp_1.ps_suppkey)
+                             ->  Index Scan using nation_pkey on nation nation_1  (cost=0.15..0.17 rows=1 width=8) (actual time=0.002..0.002 rows=1 loops=2568)
+                                   Index Cond: (n_nationkey = supplier_1.s_nationkey)
+                       ->  Index Scan using region_pkey on region region_1  (cost=0.15..0.23 rows=1 width=4) (actual time=0.002..0.002 rows=0 loops=2568)
+                             Index Cond: (r_regionkey = nation_1.n_regionkey)
+                             Filter: (r_name = 'EUROPE'::text)
+                             Rows Removed by Filter: 1
+ Total runtime: 2321.435 ms
+(47 rows)
+
+
+-----------------------------------------------------------q2
+explain analyze select
+  l_orderkey,
+  sum(l_extendedprice * (1 - l_discount)) as revenue,
+  o_orderdate,
+  o_shippriority
+from
+  customer,
+  orders,
+  lineitem
+where
+  c_mktsegment = 'BUILDING'
+  and c_custkey = o_custkey
+  and l_orderkey = o_orderkey
+  and o_orderdate < '19950315'
+  and l_shipdate > '19950315'
+group by
+  l_orderkey,
+  o_orderdate,
+  o_shippriority
+order by
+  revenue desc,
+  o_orderdate;
+
+                                                                       QUERY PLAN                                                                        
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=401991.06..402765.70 rows=309857 width=24) (actual time=18986.127..18989.350 rows=11620 loops=1)
+   Sort Key: (sum((lineitem.l_extendedprice * (1::numeric - lineitem.l_discount)))), orders.o_orderdate
+   Sort Method: external merge  Disk: 384kB
+   ->  GroupAggregate  (cost=352497.11..361018.18 rows=309857 width=24) (actual time=18884.062..18936.400 rows=11620 loops=1)
+         ->  Sort  (cost=352497.11..353271.75 rows=309857 width=24) (actual time=18884.034..18893.026 rows=30519 loops=1)
+               Sort Key: lineitem.l_orderkey, orders.o_orderdate, orders.o_shippriority
+               Sort Method: external merge  Disk: 1048kB
+               ->  Hash Join  (cost=90898.75..311524.23 rows=309857 width=24) (actual time=6004.043..18839.727 rows=30519 loops=1)
+                     Hash Cond: (lineitem.l_orderkey = orders.o_orderkey)
+                     ->  Seq Scan on lineitem  (cost=0.00..173556.64 rows=3201939 width=16) (actual time=0.015..10413.129 rows=3241776 loops=1)
+                           Filter: (l_shipdate > '1995-03-15'::date)
+                           Rows Removed by Filter: 2759439
+                     ->  Hash  (cost=88433.80..88433.80 rows=141756 width=12) (actual time=5955.128..5955.128 rows=147126 loops=1)
+                           Buckets: 4096  Batches: 8  Memory Usage: 798kB
+                           ->  Hash Join  (cost=5932.19..88433.80 rows=141756 width=12) (actual time=3187.502..5883.839 rows=147126 loops=1)
+                                 Hash Cond: (orders.o_custkey = customer.c_custkey)
+                                 ->  Seq Scan on orders  (cost=0.00..68701.65 rows=710320 width=16) (actual time=3025.204..5216.635 rows=727305 loops=1)
+                                       Filter: (o_orderdate < '1995-03-15'::date)
+                                       Rows Removed by Filter: 772695
+                                 ->  Hash  (cost=5441.00..5441.00 rows=29935 width=4) (actual time=75.246..75.246 rows=30142 loops=1)
+                                       Buckets: 4096  Batches: 2  Memory Usage: 534kB
+                                       ->  Seq Scan on customer  (cost=0.00..5441.00 rows=29935 width=4) (actual time=0.013..61.953 rows=30142 loops=1)
+                                             Filter: (c_mktsegment = 'BUILDING'::text)
+                                             Rows Removed by Filter: 119858
+ Total runtime: 18991.122 ms
+(25 rows)
+
+--------------------------------------------------------q3
+explain analyze select
+  c_custkey,
+  c_name,
+  sum(l_extendedprice * (1 - l_discount)) as revenue,
+  c_acctbal,
+  n_name,
+  c_address,
+  c_phone,
+  c_comment
+from
+  customer,
+  orders,
+  lineitem,
+  nation
+where
+  c_custkey = o_custkey
+  and l_orderkey = o_orderkey
+  and o_orderdate >= '1993-10-01'
+  and o_orderdate < '1993-10-01'::date + interval '3 month'
+  and l_returnflag = 'R'
+  and c_nationkey = n_nationkey
+group by
+  c_custkey,
+  c_name,
+  c_acctbal,
+  c_phone,
+  n_name,
+  c_address,
+  c_comment
+order by
+  revenue desc;
+
+
+                                                                            QUERY PLAN                                                                            
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=485143.61..485288.15 rows=57816 width=187) (actual time=31010.835..31035.589 rows=37967 loops=1)
+   Sort Key: (sum((lineitem.l_extendedprice * (1::numeric - lineitem.l_discount))))
+   Sort Method: external merge  Disk: 6376kB
+   ->  GroupAggregate  (cost=473065.00..475233.10 rows=57816 width=187) (actual time=30691.803..30907.877 rows=37967 loops=1)
+         ->  Sort  (cost=473065.00..473209.54 rows=57816 width=187) (actual time=30691.778..30780.259 rows=114705 loops=1)
+               Sort Key: customer.c_custkey, customer.c_name, customer.c_acctbal, customer.c_phone, nation.n_name, customer.c_address, customer.c_comment
+               Sort Method: external merge  Disk: 19856kB
+               ->  Hash Join  (cost=58810.32..463154.49 rows=57816 width=187) (actual time=22177.676..28603.376 rows=114705 loops=1)
+                     Hash Cond: (customer.c_nationkey = nation.n_nationkey)
+                     ->  Hash Join  (cost=58782.32..462331.52 rows=57816 width=159) (actual time=22177.633..28571.988 rows=114705 loops=1)
+                           Hash Cond: (orders.o_custkey = customer.c_custkey)
+                           ->  Hash Join  (cost=48618.32..447294.47 rows=57816 width=16) (actual time=21915.549..27882.637 rows=114705 loops=1)
+                                 Hash Cond: (lineitem.l_orderkey = orders.o_orderkey)
+                                 ->  Seq Scan on lineitem  (cost=0.00..373157.04 rows=1543512 width=16) (actual time=19503.281..24874.266 rows=1478870 loops=1)
+                                       Filter: (l_returnflag = 'R'::text)
+                                       Rows Removed by Filter: 4522345
+                                 ->  Hash  (cost=47696.00..47696.00 rows=56186 width=8) (actual time=2412.235..2412.235 rows=57069 loops=1)
+                                       Buckets: 4096  Batches: 4  Memory Usage: 566kB
+                                       ->  Seq Scan on orders  (cost=0.00..47696.00 rows=56186 width=8) (actual time=0.007..2373.806 rows=57069 loops=1)
+                                             Filter: ((o_orderdate >= '1993-10-01'::date) AND (o_orderdate < '1994-01-01 00:00:00'::timestamp without time zone))
+                                             Rows Removed by Filter: 1442931
+                           ->  Hash  (cost=5066.00..5066.00 rows=150000 width=147) (actual time=101.862..101.862 rows=150000 loops=1)
+                                 Buckets: 1024  Batches: 32  Memory Usage: 866kB
+                                 ->  Seq Scan on customer  (cost=0.00..5066.00 rows=150000 width=147) (actual time=0.005..34.957 rows=150000 loops=1)
+                     ->  Hash  (cost=18.00..18.00 rows=800 width=36) (actual time=0.031..0.031 rows=25 loops=1)
+                           Buckets: 1024  Batches: 1  Memory Usage: 2kB
+                           ->  Seq Scan on nation  (cost=0.00..18.00 rows=800 width=36) (actual time=0.008..0.015 rows=25 loops=1)
+ Total runtime: 31052.901 ms
+(28 rows)
+
+---------------------------------------------------------q4
+explain analyze select l_shipmode,sum(case
+when o_orderpriority = '1URGENT'
+or o_orderpriority = '2HIGH'
+then 1
+else 0
+end) as high_line_count,
+sum(case
+when o_orderpriority <> '1URGENT'
+and o_orderpriority <> '2HIGH'
+then 1
+else 0
+end) as low_line_count
+from orders,lineitem
+where o_orderkey = l_orderkey and l_shipmode in ('MAIL', 'SHIP')
+and l_commitdate < l_receiptdate and l_shipdate < l_commitdate
+and l_receiptdate >= '19940101' and l_receiptdate < '19940101' + interval '1 year'
+group by l_shipmode
+order by l_shipmode;
+
+-------------------------------------------------------q5
+explain analyze select
+  p_brand,
+  p_type,
+  p_size,
+  count(distinct ps_suppkey) as supplier_cnt
+from
+  partsupp,
+  part
+where
+  p_partkey = ps_partkey
+  and p_brand <> 'Brand#45'
+  and p_type not like 'MEDIUM POLISHED%'
+  and p_size in (49, 14, 23, 45, 19, 3, 36, 9)
+  and ps_suppkey not in (
+    select
+      s_suppkey
+    from
+      supplier
+    where
+      s_comment like '%Customer%Complaints%'
+  )
+group by
+  p_brand,
+  p_type,
+  p_size
+order by
+  supplier_cnt desc,
+  p_brand,
+  p_type,
+  p_size;
+
+                                                                                 QUERY PLAN                                                                                  
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=66496.54..66503.83 rows=2919 width=38) (actual time=8329.382..8334.880 rows=18314 loops=1)
+   Sort Key: (count(DISTINCT partsupp.ps_suppkey)), part.p_brand, part.p_type, part.p_size
+   Sort Method: external merge  Disk: 1016kB
+   ->  GroupAggregate  (cost=65634.43..66328.53 rows=2919 width=38) (actual time=6643.461..8066.324 rows=18314 loops=1)
+         ->  Sort  (cost=65634.43..65767.41 rows=53193 width=38) (actual time=6643.390..7997.813 rows=118274 loops=1)
+               Sort Key: part.p_brand, part.p_type, part.p_size
+               Sort Method: external merge  Disk: 5776kB
+               ->  Hash Join  (cost=9645.80..60003.05 rows=53193 width=38) (actual time=2150.646..3667.920 rows=118274 loops=1)
+                     Hash Cond: (partsupp.ps_partkey = part.p_partkey)
+                     ->  Seq Scan on partsupp  (cost=338.00..44353.33 rows=364533 width=8) (actual time=1868.084..3097.651 rows=799680 loops=1)
+                           Filter: (NOT (hashed SubPlan 1))
+                           Rows Removed by Filter: 320
+                           SubPlan 1
+                             ->  Seq Scan on supplier  (cost=0.00..338.00 rows=1 width=4) (actual time=0.122..3.044 rows=4 loops=1)
+                                   Filter: (s_comment ~~ '%Customer%Complaints%'::text)
+                                   Rows Removed by Filter: 9996
+                     ->  Hash  (cost=8715.00..8715.00 rows=29184 width=38) (actual time=282.236..282.236 rows=29581 loops=1)
+                           Buckets: 2048  Batches: 4  Memory Usage: 527kB
+                           ->  Seq Scan on part  (cost=0.00..8715.00 rows=29184 width=38) (actual time=0.010..271.882 rows=29581 loops=1)
+                                 Filter: ((p_brand <> 'Brand#45'::text) AND (p_type !~~ 'MEDIUM POLISHED%'::text) AND (p_size = ANY ('{49,14,23,45,19,3,36,9}'::integer[])))
+                                 Rows Removed by Filter: 170419
+ Total runtime: 8337.166 ms
+(22 rows)
+
+
+------------------------------------------------------q6
+explain analyze select
+  cntrycode,
+  count(*) as numcust,
+  sum(c_acctbal) as totacctbal
+from
+  (
+    select
+      substring(c_phone from 1 for 2) as cntrycode,
+      c_acctbal
+    from
+      customer
+    where
+      substring(c_phone from 1 for 2) in
+        ('13', '31', '23', '29', '30', '18', '17')
+      and c_acctbal > (
+        select
+          avg(c_acctbal)
+        from
+          customer
+        where
+          c_acctbal > 0.00
+          and substring(c_phone from 1 for 2) in
+            ('13', '31', '23', '29', '30', '18', '17')
+      )
+      and not exists (
+        select
+          *
+        from
+          orders
+        where
+          o_custkey = c_custkey
+      )
+  ) as custsale
+group by
+  cntrycode
+order by
+  cntrycode;
+
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ GroupAggregate  (cost=85043.00..85059.15 rows=718 width=22) (actual time=918.784..921.233 rows=7 loops=1)
+   InitPlan 1 (returns $0)
+     ->  Aggregate  (cost=7140.42..7140.43 rows=1 width=6) (actual time=115.550..115.550 rows=1 loops=1)
+           ->  Seq Scan on customer customer_1  (cost=0.00..7128.50 rows=4767 width=6) (actual time=0.017..93.471 rows=38120 loops=1)
+                 Filter: ((c_acctbal > 0.00) AND ("substring"(c_phone, 1, 2) = ANY ('{13,31,23,29,30,18,17}'::text[])))
+                 Rows Removed by Filter: 111880
+   ->  Sort  (cost=77902.57..77904.36 rows=718 width=22) (actual time=918.338..918.729 rows=6384 loops=1)
+         Sort Key: ("substring"(customer.c_phone, 1, 2))
+         Sort Method: quicksort  Memory: 492kB
+         ->  Hash Anti Join  (cost=64806.00..77868.51 rows=718 width=22) (actual time=655.161..901.267 rows=6384 loops=1)
+               Hash Cond: (customer.c_custkey = orders.o_custkey)
+               ->  Seq Scan on customer  (cost=0.00..7128.50 rows=1750 width=26) (actual time=115.576..190.748 rows=19000 loops=1)
+                     Filter: ((c_acctbal > $0) AND ("substring"(c_phone, 1, 2) = ANY ('{13,31,23,29,30,18,17}'::text[])))
+                     Rows Removed by Filter: 131000
+               ->  Hash  (cost=40196.00..40196.00 rows=1500000 width=4) (actual time=539.371..539.371 rows=1500000 loops=1)
+                     Buckets: 4096  Batches: 64  Memory Usage: 886kB
+                     ->  Seq Scan on orders  (cost=0.00..40196.00 rows=1500000 width=4) (actual time=0.004..268.813 rows=1500000 loops=1)
+ Total runtime: 921.327 ms
+(18 rows)
